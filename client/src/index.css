@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Josefin Sans';
+  src: url('./fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+  /* Ajusta la ruta según la ubicación de tus archivos de fuente */
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #FAF9FF;
+}

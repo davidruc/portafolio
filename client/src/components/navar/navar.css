@@ -1,0 +1,15 @@
+
+/* Configuración del logo */
+.logo {
+    width: 150px;
+     
+}
+
+
+.navar-inside{
+    padding: 10px;
+    background:linear-gradient(to bottom, #00000077, #0000001c);;
+}
+    /* .navar-inside{
+        background-color: #024959 ;
+    } */
