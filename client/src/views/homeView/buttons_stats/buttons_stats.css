@@ -1,0 +1,19 @@
+
+
+.typeOfStat{
+    color: black
+}
+
+.Statsicons{
+    color: rgb(180, 180, 180);
+    margin-right: 5%;
+}
+.typeOfStat h3{
+    font-size: 4vh;
+    margin: 0;
+}
+
+.typeOfStat p{
+    font-size: 1.6vh;
+    margin: 0;
+}

@@ -1,0 +1,18 @@
+.personalCard{
+    -webkit-box-shadow: 0px 4px 10px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 4px 10px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 4px 10px -1px rgba(0,0,0,0.75);
+}
+.personalCard h3{
+    font-size: 2.3vh;
+    margin: 1 0;
+}
+.personalCard p{
+    font-size: 1.9vh;
+    text-align: center;
+    margin: 0;
+}
+.imgCard{
+    width: 80px;
+    height: 80px;
+}
