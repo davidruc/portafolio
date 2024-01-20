@@ -1,0 +1,13 @@
+.content{
+    font-size: 3vh;
+    color: #024959;
+    /* Todo: adecuar el tamano de según el contenido si no paila */
+    height: 400px;
+}
+
+
+.cont .css-231cx4-MuiTabs-root .MuiTabs-indicatorSpan{
+    background-color: #EC1C24;
+    width: 80%;
+    max-width: unset;
+}

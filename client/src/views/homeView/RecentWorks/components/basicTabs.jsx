@@ -2,8 +2,45 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+
+
+const StyledTabs = styled((props) => (
+  <Tabs
+    {...props}
+    TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
+  />
+))({
+  '& .MuiTabs-indicator': {
+    display: 'flex',
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
+  },
+  '& .MuiTabs-indicatorSpan': {
+    maxWidth: 40,
+    width: '100%',
+    backgroundColor: '#635ee7',
+  },
+});
+
+const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
+  ({ theme }) => ({
+    textTransform: 'none',
+    fontWeight: theme.typography.fontWeightBold,
+    fontSize: theme.typography.pxToRem(15),
+    marginRight: theme.spacing(1),
+    color: '#024959',
+    '&.Mui-selected': {
+      color: '#EC1C24',
+    },
+    '&.Mui-focusVisible': {
+      backgroundColor: '#EC1C24',
+    },
+  }),
+);
+
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -46,21 +83,23 @@ function BasicTabs() {
   };
 
   return (
-    <Box sx={{ width: "100%",display: "flex", flexDirection: "column", marginLeft: { xs: 0, md: 10, lg: 30, xl: 60 }, justifyContent: { xs: "center", md: "flex-start" },  }}>
+    <Box className="cont" sx={{ width: "100%",display: "flex", flexDirection: "column", marginLeft: { xs: 0, md: 10, lg: 30, xl: 60 }, justifyContent: { xs: "center", md: "flex-start" },  }}>
       <Box>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Everything" {...a11yProps(0)} />
-          <Tab label="Mobile Apps" {...a11yProps(1)} />
-          <Tab label="Static websides" {...a11yProps(2)} />
-        </Tabs>
+        <StyledTabs value={value} onChange={handleChange}>
+          <StyledTab  className="contentTabs" label="Everything" {...a11yProps(0)} />
+          <StyledTab  className="contentTabs" label="Mobile Apps" {...a11yProps(1)} />
+          <StyledTab  className="contentTabs" label="Static websides" {...a11yProps(2)} />
+        </StyledTabs>
       </Box>
-      <CustomTabPanel value={value} index={0}>
-        Item One
+      <CustomTabPanel className="content" value={value} index={0}>
+        <h1>Hey hey hey :D</h1>
+        <p>Text random</p>
+
       </CustomTabPanel>
-      <CustomTabPanel value={value} index={1}>
+      <CustomTabPanel className="content" value={value} index={1}>
         Item Two
       </CustomTabPanel>
-      <CustomTabPanel value={value} index={2}>
+      <CustomTabPanel className="content" value={value} index={2}>
         Item Three
       </CustomTabPanel>
     </Box>
