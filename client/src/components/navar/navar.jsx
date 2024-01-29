@@ -1,19 +1,20 @@
-import * as React from "react";
+import React, {useState, useEffect} from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import logo from "../../assets/logo-vertical-sinfondo.png";
 import {ButtonNavar} from "../buttons_navar/button_navar";
-import { useTranslation } from 'react-i18next';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import TemporaryDrawer from "../../components/Drawer/drawer";
 import ListItemIcon from '@mui/material/ListItemIcon';
 
+import logo from "../../assets/logo-vertical-sinfondo.png";
+import TemporaryDrawer from "../../components/Drawer/drawer";
 
+import { useTranslation } from 'react-i18next';
+import { useInView } from 'react-intersection-observer';
 
 //* Iconos
 import MenuItem from "@mui/material/MenuItem";
@@ -39,35 +40,65 @@ function Navar() {
 
   const { i18n } = useTranslation();
   const { t } = useTranslation();
-  const [lnge, setLnge] = React.useState('es');
+  const [lnge, setLnge] = useState('es');
   const changeLanguage = (event) => {
     setLnge(event.target.value);
     i18n.changeLanguage(event.target.value);
 
   };
-
-  const [section, setSection] = React.useState('home');
-
   const NAVBAR_HEIGHT = 130; // Ajusta esto según la altura de tu navbar fijo
 
-  const scrollToSection = (href) => {
+  const [currentSection, setCurrentSection] = useState('Home');
+  const [refContainer, inViewContainer] = useInView({
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Obtenemos la posición de todas las secciones
+      const homePos = document.getElementById('home')?.offsetTop - NAVBAR_HEIGHT || 0;
+      const aboutPos = document.getElementById('about')?.offsetTop - NAVBAR_HEIGHT || 0;
+      const servicesPos = document.getElementById('services')?.offsetTop - NAVBAR_HEIGHT || 0;
+      const worksPos = document.getElementById('works')?.offsetTop - NAVBAR_HEIGHT || 0;
+      const contactPos = document.getElementById('contact')?.offsetTop - NAVBAR_HEIGHT || 0;
+
+      // Obtenemos la posición actual del scroll
+      const scrollPos = window.scrollY;
+
+      // Determinamos la sección actual
+      if (scrollPos < aboutPos) setCurrentSection('Home');
+      else if (scrollPos < servicesPos) setCurrentSection('About');
+      else if (scrollPos < worksPos) setCurrentSection('Services');
+      else if (scrollPos < contactPos) setCurrentSection('Works');
+      else setCurrentSection('Contact');
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Manejar el evento load para garantizar que el DOM esté completamente cargado
+    window.addEventListener('load', handleScroll);
+
+    // Limpiar el evento al desmontar el componente
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('load', handleScroll);
+    };
+  }, [inViewContainer]);
+
+  const handleLinkClick = (href, section) => {
+    setCurrentSection(section);
     const targetElement = document.getElementById(href.substring(1));
     if (targetElement) {
-      const newSection = href.substring(1);
-      setSection(newSection);
       const offset = targetElement.offsetTop - NAVBAR_HEIGHT;
       window.scrollTo({ top: offset, behavior: 'smooth' });
     }
   };
 
-  const handleLinkClick = (href) => {
-    scrollToSection(href);
-  };
 
   return (
     
     <AppBar className="navar" position="fixed" elevation={0} color="transparent">
-      <Container className="navar-inside" maxWidth="xxl">
+      <Container ref={refContainer} className="navar-inside" maxWidth="xxl">
         <Toolbar disableGutters>
 
           {/* Parte del ícono y logo Grande */}
@@ -109,14 +140,15 @@ function Navar() {
             }}
           >
            {
-            pages.map( page => 
+            pages.map( (page) => (
                 <ButtonNavar
                     key={page.text}
                     text={t(page.text)}
-                    href={page.href}
-                    onClick={()=> handleLinkClick(page.href)}
-                    activeSection={section}
-                />
+                    // href={page.href}
+                    onClick={()=> handleLinkClick(page.href, page.text)}
+                    // activeSection={section}
+                    active={currentSection === page.text}
+                /> )
             )
            } 
 

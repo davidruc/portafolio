@@ -6,7 +6,7 @@ function ButtonNavar(props) {
    
   return (
     <Button 
-      className={`ButtonNavar ${props.activeSection === props.href.substring(1) ? 'active' : ''}`}
+      className={`ButtonNavar ${props.active ? "active" : ""}`}
       key={props.text}
       onClick={
         props.onClick
