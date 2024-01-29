@@ -14,7 +14,7 @@
 .flip-card-front img{
     width: 200px;
 }
-.flip-card-front h3, .flip-card-back h3{
+.flip-card-front p, .flip-card-back h3{
     margin: 0;
 }
 

@@ -2,41 +2,67 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Button from '@mui/material/Button';
 import Container from "@mui/material/Container";
-import MenuItem from "@mui/material/MenuItem";
-import "./navar.css";
 import logo from "../../assets/logo-vertical-sinfondo.png";
 import {ButtonNavar} from "../buttons_navar/button_navar";
-import {useNavigate} from "react-router-dom";
+import { useTranslation } from 'react-i18next';
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import TemporaryDrawer from "../../components/Drawer/drawer";
+import ListItemIcon from '@mui/material/ListItemIcon';
+
+
+
+//* Iconos
+import MenuItem from "@mui/material/MenuItem";
+import MenuIcon from '@mui/icons-material/Menu';
+import HomeIcon from '@mui/icons-material/Home';
+import InfoIcon from '@mui/icons-material/Info';
+import WorkIcon from '@mui/icons-material/Work';
+import DisplaySettingsIcon from '@mui/icons-material/DisplaySettings';
+import PhoneIcon from '@mui/icons-material/Phone';
+
+import "./navar.css";
 
 const pages = [
-  { text: "Home", path: "/home" },
-  { text: "About", path: "/about" },
-  { text: "Services", path: "/services" },
-  { text: "Works", path: "/work" },
-  { text: "Contact", path: "/contact" },
+  { text: 'Home', href: "#home", icon: <HomeIcon /> },
+  { text: "About", href: "#about", icon: <InfoIcon /> },
+  { text: "Services", href: "#services", icon: <DisplaySettingsIcon /> },
+  { text: "Works", href: "#works", icon: <WorkIcon /> },
+  { text: "Contact", href: "#contact", icon: <PhoneIcon /> },
 ];
 
+
 function Navar() {
-  const navigate = useNavigate();
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
+  const { i18n } = useTranslation();
+  const { t } = useTranslation();
+  const [lnge, setLnge] = React.useState('es');
+  const changeLanguage = (event) => {
+    setLnge(event.target.value);
+    i18n.changeLanguage(event.target.value);
+
   };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+  const [section, setSection] = React.useState('home');
+
+  const NAVBAR_HEIGHT = 130; // Ajusta esto según la altura de tu navbar fijo
+
+  const scrollToSection = (href) => {
+    const targetElement = document.getElementById(href.substring(1));
+    if (targetElement) {
+      const newSection = href.substring(1);
+      setSection(newSection);
+      const offset = targetElement.offsetTop - NAVBAR_HEIGHT;
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+    }
   };
 
-  const redirection = (path) =>{
-    navigate(path)
-  }
+  const handleLinkClick = (href) => {
+    scrollToSection(href);
+  };
 
   return (
     
@@ -55,42 +81,23 @@ function Navar() {
           </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", lg: "none" }, justifyContent: "flex-end" }}>
-            
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              sx={{color: "white"}}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", lg: "none" },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page.text} onClick={()=> redirection(page.path)}>
-                  <Typography textAlign="center">{page.text}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box> 
+            <TemporaryDrawer
+              anchor="right"
+              icon={<MenuIcon sx={{ color: "white" }} />}
+              content={ 
+                <>
+                  {pages.map((page) => (
+                    <MenuItem key={page.text} sx={{paddingBottom: "30px"}} onClick={() => handleLinkClick(page.href)}>
+                      <ListItemIcon>{page.icon}</ListItemIcon>
+                      <Typography textAlign="center">{t(page.text)}</Typography>
+                    </MenuItem>
+                  ))}
+                </>
+              }
+  
+            />
+          </Box>
+
 
           <Box
             sx={{
@@ -105,13 +112,35 @@ function Navar() {
             pages.map( page => 
                 <ButtonNavar
                     key={page.text}
-                    text={page.text}
-                    onClick={()=> redirection(page.path)}
+                    text={t(page.text)}
+                    href={page.href}
+                    onClick={()=> handleLinkClick(page.href)}
+                    activeSection={section}
                 />
             )
            } 
+
           </Box>
+        
+          <Box sx={{ minWidth: 120 }}>
+            <FormControl fullWidth  sx={{ '& .MuiInputLabel-root': { color: 'rgba(255, 255, 255, 0.4)'}, '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(255, 255, 255, 0.4)' }, '& .MuiSelect-icon': { color: 'white' },}}>
+              <InputLabel id="demo-simple-select-label">{t('language')}</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={lnge}
+                label="Age"
+                onChange={changeLanguage}
+                sx={{ color: 'white !important' }}
+              >
+                <MenuItem value={'es'}>Español</MenuItem>
+                <MenuItem value={'en'}>English</MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
+          
         </Toolbar>
+        
       </Container>
     </AppBar>
   );

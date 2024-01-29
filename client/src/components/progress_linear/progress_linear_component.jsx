@@ -21,8 +21,8 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 
 function LinearProgressWithLabel(props) {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', marginY: 1.4, gap: 1 }}>
-      <Box sx={{ gap:12, display: 'flex' }}>
+    <Box sx={{ display: 'flex',  flexDirection: 'column', marginY: 1.4, gap: 1 }}>
+      <Box sx={{ display: 'flex',justifyContent: 'space-between',}}>
         <p className='progressDescription'>{props.text}</p>
         <Typography variant="body2" color="text.secondary">{`${Math.round(
           props.value,

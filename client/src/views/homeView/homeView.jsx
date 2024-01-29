@@ -7,25 +7,30 @@ import { RecentWorksView } from "./RecentWorks/recentWorks";
 import AboutMe from "./about/about";
 import "./homeView.css";
 import { Box } from "@mui/material";
-
+import TextMobileStepper from "./reviews/reviews_view"; 
 
 export default function HomeView(){
 
     return (
         <>
             <main>
-              <Box className="FView">
+              <Box className="FView" id="home">
                 <Navar/>  
                 <InitialPart/>
               </Box>
-              <Box className="SView">
+              <Box className="SView" id="about">
                 <AboutMe/>
               </Box>
-              <Box className="TView">
+              <Box className="TView" id="services">
                 <ServicesSection/>
                 <ExperienceSection/>
+              </Box>
+              <Box id="works">
                 <RecentWorksView/>
               </Box>
+              {/* <Box id="contact">
+                <TextMobileStepper/>
+              </Box> */}
 
             </main>
         </>

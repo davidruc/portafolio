@@ -1,0 +1,10 @@
+
+.ButtonNavar  {
+    /* Estilos por defecto para todos los botones */
+    color: white !important;
+  }
+  
+.ButtonNavar.active {
+    /* Estilos para el botón activo */
+    color: #FFA500 !important;
+}

@@ -4,7 +4,7 @@ import { TitleConfig } from "../../../components/title/titleConfiguration";
 import { BasicTabs } from "./components/basicTabs";
 function RecentWorksView(){
     return (
-        <Box>
+        <Box sx={{height:"100vh"}}>
             <TitleConfig title={"Recent Works"} />
             <BasicTabs/>
         </Box>
