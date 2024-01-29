@@ -1,0 +1,24 @@
+.InTouch{
+    color: #024959;
+}
+
+.InTouch a{
+    color: #EF8C32;
+}
+
+.inputs input{
+    border: 1px transparent;
+    margin: 2%;
+    padding: 4%;
+    border-radius: 20px;
+    background-color: #F5F5F5;
+    
+}
+
+.inputs input[type=text]:hover{
+    box-shadow: 0 0 5pt 0.5pt #D3D3D3;
+}
+.inputs input[type=text]:focus {
+    box-shadow: 0 0 5pt 2pt #D3D3D3;
+    outline-width: 0px;
+}

@@ -1,4 +1,5 @@
 .cardBox{
+    background-color: #F5F5F5 !important;
     border-radius: 12px;
     margin-bottom: 30px;
     box-shadow: 1px 10px 8px 3px rgba(78, 9, 206, 0.411), 0px 4px 4px 0px rgba(75, 13, 218, 0.14), 0px 6px 16px 0px rgba(58, 3, 255, 0.12);
@@ -14,6 +15,6 @@
     padding: 10px 30px;
     border-color: transparent;
     background-color: #EC1C24;
-    color:white;
+    color:#F5F5F5;
     font-size: 1.95vh;
 };

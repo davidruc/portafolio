@@ -8,7 +8,7 @@ function CardContent() {
     return (
         
         <Box sx={{display: "flex", flexWrap: "wrap", gap: 5, px: "10px", justifyContent:"center", marginBottom: 5}}> 
-            <Box className="experienceBox" sx={{display: "flex", flexDirection: "column",backgroundColor: "white", height: "100%", width: {xs: "320px", md: "40vh" , lg: "50vh"}, padding: "30px"}}>
+            <Box className="experienceBox" sx={{display: "flex", flexDirection: "column",backgroundColor:  "#F5F5F5", height: "100%", width: {xs: "320px", md: "40vh" , lg: "50vh"}, padding: "30px"}}>
                     <BoxContent
                         img={1}
                         InitDate={2011}
@@ -32,7 +32,7 @@ function CardContent() {
                         info={t("certified")}
                     />
             </Box>
-            <Box className="experienceBox" sx={{display: "flex", flexDirection: "column",backgroundColor: "white", height: "100%", width:{xs: "320px", md: "40vh", lg: "50vh"}, padding: "30px"}}>
+            <Box className="experienceBox" sx={{display: "flex", flexDirection: "column",backgroundColor:"#F5F5F5", height: "100%", width:{xs: "320px", md: "40vh", lg: "50vh"}, padding: "30px"}}>
                 <BoxContent
                     img={1}
                     InitDate={2018}
