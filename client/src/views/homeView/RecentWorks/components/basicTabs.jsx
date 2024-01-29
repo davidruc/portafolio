@@ -9,16 +9,7 @@ import { RecentWorksCard } from '../../../../components/recentWork_card/recentwo
 import { ActionButton } from '../../../../components/action_button/action_button';
 
 const cardInfo = [
-  { imageUrl: "https://cdn-icons-png.flaticon.com/512/10810/10810423.png", descript: "Personal WebSide", type: 1 },
-  { imageUrl: "https://cdn-icons-png.flaticon.com/512/10810/10810423.png", descript: "Dynamic WebSide", type: 2 },
-  { imageUrl: "https://cdn-icons-png.flaticon.com/512/10810/10810423.png", descript: "third element ", type: 2 },
-  { imageUrl: "https://cdn-icons-png.flaticon.com/512/10810/10810423.png", descript: "third element ", type: 2 },
-  { imageUrl: "https://cdn-icons-png.flaticon.com/512/10810/10810423.png", descript: "Personal WebSide", type: 1 },
-  { imageUrl: "https://cdn-icons-png.flaticon.com/512/10810/10810423.png", descript: "Dynamic WebSide", type: 2 },
-  { imageUrl: "https://cdn-icons-png.flaticon.com/512/10810/10810423.png", descript: "third element ", type: 2 },
-  { imageUrl: "https://cdn-icons-png.flaticon.com/512/10810/10810423.png", descript: "Personal WebSide", type: 1 },
-  { imageUrl: "https://cdn-icons-png.flaticon.com/512/10810/10810423.png", descript: "third element ", type: 2 },
-  { imageUrl: "https://cdn-icons-png.flaticon.com/512/10810/10810423.png", descript: "third element ", type: 2 }, 
+  { imageUrl: "https://cdn-icons-png.flaticon.com/512/10810/10810423.png", descript: "Personal WebSide", info: "", link: "", type: 1 },
 ];
 
 function CustomTabPanel(props) {

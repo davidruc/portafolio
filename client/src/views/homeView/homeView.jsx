@@ -1,13 +1,13 @@
 import React from "react";
 import Navar from "../../components/navar/navar";
 import InitialPart from "./initial_section/InitialPart";
-import {ServicesSection} from "./services/services_section";
+import {ServicesSection} from "./services_view/services_section";
 import { ExperienceSection } from "./expirience/experience";
 import { RecentWorksView } from "./RecentWorks/recentWorks";
 import AboutMe from "./about/about";
 import "./homeView.css";
 import { Box } from "@mui/material";
-import TextMobileStepper from "./reviews/reviews_view"; 
+import TextMobileStepper from "./reviews_view/reviews_view"; 
 
 export default function HomeView(){
 
@@ -23,14 +23,16 @@ export default function HomeView(){
               </Box>
               <Box className="TView" id="services">
                 <ServicesSection/>
-                <ExperienceSection/>
               </Box>
               <Box id="works">
-                <RecentWorksView/>
+                
+                {/* Trabajos recientes: <RecentWorksView/> */}
+                <ExperienceSection/>
               </Box>
-              {/* <Box id="contact">
-                <TextMobileStepper/>
-              </Box> */}
+              <Box id="contact">
+                {/* Testimonios <TextMobileStepper/> */}
+                
+              </Box>
 
             </main>
         </>
