@@ -7,6 +7,8 @@
 .Statsicons{
     color: rgb(180, 180, 180);
     margin-right: 5%;
+    width: 4vh !important;
+    height: 4vh !important;
 }
 .typeOfStat h3{
     font-size: 4vh;

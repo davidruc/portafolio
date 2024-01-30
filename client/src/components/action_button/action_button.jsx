@@ -2,7 +2,7 @@ import "./action_button.css"
 
 function ActionButton(props) {
     return (
-        <button className="actionButton">
+        <button className="actionButton" onClick={props.onClick}>
             {props.text}
         </button>
     )

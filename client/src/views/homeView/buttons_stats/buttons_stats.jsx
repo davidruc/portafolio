@@ -13,7 +13,7 @@ function ButtonStats(){
 
     return (
         <Box sx={{ marginTop: 2}}>
-             <Box className='typeOfStat' sx={{ display: "flex", justifyContent:"center", flexWrap: "wrap",gap: {xs:5, md: 10}, padding: "10px"}}>
+             <Box className='typeOfStat' sx={{ display: "flex", justifyContent:"center", flexWrap: "wrap",gap: {xs:5, md: "10vh", xxl: "15vh"}, padding: "10px"}}>
             <Box sx={{display:"flex", alignItems:"center", justifyContent: "flex-start",width: "180px"}}>
                 <ThumbUpIcon className='Statsicons' fontSize='large'/>
                 <Box>

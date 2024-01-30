@@ -12,7 +12,7 @@ function MediaControlCard() {
   const pathCv = "../../../public/cv.pdf";
   return (
     <Card className='cardBox' sx={{ display: 'flex', flexDirection: {xs: "column", md: "row"}, alignItems: "center"}}>
-      <Box sx={{ display: 'flex', flexDirection: 'column', width: "60vh", maxWidth: "365px", alignItems: "center" }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column',  width: "60vh", maxWidth: "365px", alignItems: "center" }}>
       <CardContent>
         <p className='pText'>{t("textAboutMe")}</p>  
       </CardContent>

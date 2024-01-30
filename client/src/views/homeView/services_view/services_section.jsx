@@ -9,7 +9,7 @@ function ServicesSection (){
     return (
         <Box className="servicesInfo" sx={{marginY: { xs: 15, md: 10, xl: 5 }}}>
             <TitleConfig title={t('Services')} />
-            <Box sx={{display: "flex", flexDirection: {xs: "column", md: "row"}, gap: 4, alignItems: "center" ,justifyContent: "center"   }}>
+            <Box sx={{display: "flex", flexDirection: {xs: "column", md: "row"}, gap: "4vh", alignItems: "center" ,justifyContent: "center"   }}>
             <OwnCard
                 color={1}
                 size={30}

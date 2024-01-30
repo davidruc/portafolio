@@ -6,7 +6,7 @@ import "./icons.css"
 
 function ListOfIcons() {
   return (
-    <Box sx={{display:"flex", gap:3}}>
+    <Box sx={{display:"flex", gap:"3vh"}}>
         {/* todo: agregar funcionalidad en los botones */}
       <LinkedInIcon className="iconsSocial"/>
       <GoogleIcon className="iconsSocial"/>

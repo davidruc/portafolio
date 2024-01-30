@@ -18,7 +18,7 @@ export default function AboutMe() {
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
             justifyContent: "center",
-            gap: 4,
+            gap: "4vh",
             }}
         >
             <Box

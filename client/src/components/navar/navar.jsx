@@ -136,7 +136,7 @@ function Navar() {
               flexGrow: 1,
               display: { xs: "none", lg: "flex" },
               justifyContent: "center",
-              gap: 5
+              gap: "5vh"
             }}
           >
            {
@@ -154,8 +154,8 @@ function Navar() {
 
           </Box>
         
-          <Box sx={{ minWidth: 120 }}>
-            <FormControl fullWidth  sx={{ '& .MuiInputLabel-root': { color: 'rgba(255, 255, 255, 0.4)'}, '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(255, 255, 255, 0.4)' }, '& .MuiSelect-icon': { color: 'white' },}}>
+          <Box sx={{ width: "15vh", height: "6vh"}}>
+            <FormControl fullWidth  sx={{ height: "100% !important", fontSize: "1.8vh !important",'& .MuiInputLabel-root': { color: 'rgba(255, 255, 255, 0.4)'}, '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(255, 255, 255, 0.4)' }, '& .MuiSelect-icon': { color: 'white' },}}>
               <InputLabel id="demo-simple-select-label">{t('language')}</InputLabel>
               <Select
                 labelId="demo-simple-select-label"
@@ -163,10 +163,10 @@ function Navar() {
                 value={lnge}
                 label="Age"
                 onChange={changeLanguage}
-                sx={{ color: 'white !important' }}
+                sx={{ color: 'white !important' ,height: "100% !important", fontSize: "1.8vh !important"}}
               >
-                <MenuItem value={'es'}>Español</MenuItem>
-                <MenuItem value={'en'}>English</MenuItem>
+                <MenuItem sx={{ fontSize: "1.8vh !important"}} value={'es'}>Español</MenuItem>
+                <MenuItem sx={{ fontSize: "1.8vh !important"}} value={'en'}>English</MenuItem>
               </Select>
             </FormControl>
           </Box>

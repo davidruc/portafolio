@@ -1,4 +1,8 @@
 
+.iconsSocial{
+    width: 3vh !important;
+    height: 3vh !important;
+}
 
 .iconsSocial :hover{
     fill: #F99B28;

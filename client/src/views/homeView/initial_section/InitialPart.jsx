@@ -16,7 +16,7 @@ export default function InitialPart() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        gap: 2,
+        gap: "2vh",
       }}
     >
       <img src={logo} alt="" className="imagenCentral" />

@@ -1,13 +1,13 @@
 
 /* Configuración del logo */
 .logo {
-    width: 150px;
+    width: 20vh;
      
 }
 
 
 .navar-inside{
-    padding: 10px;
+    padding: 2vh;
     background:linear-gradient(to bottom, #00000077, #0000001c);;
 }
     /* .navar-inside{

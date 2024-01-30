@@ -9,6 +9,7 @@ import { RecentWorksView } from "./RecentWorks/recentWorks";
 import AboutMe from "./about/about";
 import TextMobileStepper from "./reviews_view/reviews_view"; 
 import { ContactSection } from "./contact/contact";
+import { Footer } from "../../components/footer/footer";
 
 import "./homeView.css";
 export default function HomeView(){
@@ -34,6 +35,7 @@ export default function HomeView(){
               <Box id="contact">
                 {/* Testimonios <TextMobileStepper/> */}
                 <ContactSection/>
+                <Footer/>
               </Box>
 
             </main>

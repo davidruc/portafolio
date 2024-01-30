@@ -7,9 +7,11 @@
 }
 
 .ContactMe p{
+    font-size: 2vh;
     margin: 0;
 }
 
 .ContactMe a{
     color: #ffa500;
+    font-size: 2vh;
 }
