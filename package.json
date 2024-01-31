@@ -18,6 +18,7 @@
     "@mui/styled-engine-sc": "^6.0.0-alpha.12",
     "@tsparticles/engine": "^3.1.0",
     "@tsparticles/react": "^3.0.0",
+    "firebase": "^10.7.2",
     "i18next": "^23.7.20",
     "i18next-react": "^0.2.2",
     "react": "^18.2.0",
