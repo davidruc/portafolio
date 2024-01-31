@@ -30,8 +30,9 @@ export default function InitialPart() {
     
         <ListOfIcons />
       </Box>
-
+      <a href="#contact" className="smooth-link">
       <ActionButton text={t('hireMe')} />
+      </a>
     </Box>
   );
 }

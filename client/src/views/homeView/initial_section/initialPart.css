@@ -1,0 +1,14 @@
+.smooth-link {
+    text-decoration: none;
+    display: inline-block; /* Asegura que el enlace ocupe solo el espacio del contenido */
+    transition: all 0.5s ease-out; /* Ajusta la duración y la función de temporización según tus preferencias */
+  }
+  
+  .smooth-link:hover {
+    transform: translateY(5px); /* Ajusta la cantidad de desplazamiento vertical al pasar el ratón sobre el enlace */
+  }
+  
+  /* Agrega estilos adicionales al botón si es necesario */
+  .smooth-link button {
+    /* Agrega estilos según sea necesario */
+  }

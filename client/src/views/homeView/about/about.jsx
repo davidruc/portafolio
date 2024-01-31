@@ -11,7 +11,7 @@ export default function AboutMe() {
 
   return (
     <>
-        <Box className="about" sx={{ height: {xs: "100%", lg: "65%", xl: "55%"},  marginBottom:{ xs: 15, md: 10, lg: 5 }  ,marginTop: { xs: 15, md: 10, lg: 5 }, }}>
+        <Box className="about" sx={{ height: {xs: "100%", lg: "65%", xl: "55%"},  marginY: "7vh"  }}>
         <TitleConfig title={t('AboutMe')} />  
         <Box
             sx={{

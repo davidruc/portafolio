@@ -2,8 +2,17 @@
     color: #024959;
 }
 
+.InTouch h4{
+    font-size: 2.2vh;
+}
+
+.InTouch p{
+    font-size: 1.8vh;
+}
+
 .InTouch a{
     color: #EF8C32;
+    font-size: 1.8vh;
 }
 
 
@@ -28,14 +37,18 @@
 
 
 .inputs .message {
-    height: 150px;
+    height: 25vh;
 }
 
 .inputs .submitButton{
-    border-radius: 20px;
-    padding: 12px 30px;
+    border-radius: 1.5vh;
+    padding: 1vh 2vh;
     border-color: transparent;
     background-color: #EC1C24;
     color:white;
     font-size: 1.95vh;
+}
+
+.inputs :-ms-input-placeholder{
+    font-size: 1.8vh !important;
 }

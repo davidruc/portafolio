@@ -7,13 +7,13 @@ import Box from '@mui/material/Box';
 import "./progress_linear_component.css"
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-    height: 10,
-    borderRadius: 5,
+    height: "1.4vh",
+    borderRadius: "2vh" ,
     [`&.${linearProgressClasses.colorPrimary}`]: {
       backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 100 : 800],
     },
     [`& .${linearProgressClasses.bar}`]: {
-      borderRadius: 5,
+      borderRadius: "2vh",
       backgroundColor: theme.palette.mode === 'light' ? "orange" : '#308fe8',
     },
   }));
@@ -28,7 +28,7 @@ function LinearProgressWithLabel(props) {
           props.value,
         )}%`}</Typography>
       </Box>
-      <Box sx={{width: "300px"}}>
+      <Box sx={{width: {xs: "40vh", lg: "50vh"}}}>
         <BorderLinearProgress color="warning" variant="determinate" {...props} />
       </Box>
     </Box>

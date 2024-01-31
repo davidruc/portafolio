@@ -14,28 +14,28 @@ function ButtonStats(){
     return (
         <Box sx={{ marginTop: 2}}>
              <Box className='typeOfStat' sx={{ display: "flex", justifyContent:"center", flexWrap: "wrap",gap: {xs:5, md: "10vh", xxl: "15vh"}, padding: "10px"}}>
-            <Box sx={{display:"flex", alignItems:"center", justifyContent: "flex-start",width: "180px"}}>
+            <Box sx={{display:"flex", alignItems:"center", justifyContent: "flex-start",width: "22vh"}}>
                 <ThumbUpIcon className='Statsicons' fontSize='large'/>
                 <Box>
                     <h3>34</h3>
                     <p>{t('ProjectsCompleted')}</p>
                 </Box>
             </Box>
-            <Box sx={{display:"flex", alignItems:"center", justifyContent: "flex-start",width: "180px"}}>
+            <Box sx={{display:"flex", alignItems:"center", justifyContent: "flex-start",width: "22vh"}}>
                 <CoffeeMakerTwoToneIcon className='Statsicons' fontSize='large'/>
                 <Box>
                     <h3>812</h3>
                     <p>{t('CupCoffe')}</p>
                 </Box>
             </Box>
-            <Box sx={{display:"flex", alignItems:"center", justifyContent: "flex-start",width: "180px"}}>
+            <Box sx={{display:"flex", alignItems:"center", justifyContent: "flex-start",width: "22vh"}}>
                 <HandshakeTwoToneIcon className='Statsicons' fontSize='large'/>
                 <Box>
                     <h3>10</h3>
                     <p>{t('SatisfiedClients')}</p>
                 </Box>
             </Box>
-            <Box sx={{display:"flex", alignItems:"center", justifyContent: "flex-start",width: "180px"}}>
+            <Box sx={{display:"flex", alignItems:"center", justifyContent: "flex-start",width: "22vh"}}>
                 <WorkspacePremiumTwoToneIcon className='Statsicons' fontSize='large'/>
                 <Box>
                     <h3>2</h3>

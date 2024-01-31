@@ -1,18 +1,20 @@
 .cardBox{
     background-color: #F5F5F5 !important;
-    border-radius: 12px;
+    border-radius: 1.8vh !important;
     margin-bottom: 30px;
-    box-shadow: 1px 10px 8px 3px rgba(78, 9, 206, 0.411), 0px 4px 4px 0px rgba(75, 13, 218, 0.14), 0px 6px 16px 0px rgba(58, 3, 255, 0.12);
-}   
+    -webkit-box-shadow: 0px 4px 10px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 4px 10px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 4px 10px -1px rgba(0,0,0,0.75);}   
 
 .pText{
     white-space: pre-wrap;
+    font-size: 1.9vh;
     margin: 0 auto; /* Puedes usar "ellipsis" u otro carácter de tu elección */
 }
 
 .cvButton{
-    border-radius: 20px;
-    padding: 10px 30px;
+    border-radius: 1.5vh;
+    padding: 1vh 2vh;   
     border-color: transparent;
     background-color: #EC1C24;
     color:#F5F5F5;

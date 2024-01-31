@@ -12,8 +12,8 @@ function MediaControlCard() {
   const pathCv = "../../../public/cv.pdf";
   return (
     <Card className='cardBox' sx={{ display: 'flex', flexDirection: {xs: "column", md: "row"}, alignItems: "center"}}>
-      <Box sx={{ display: 'flex', flexDirection: 'column',  width: "60vh", maxWidth: "365px", alignItems: "center" }}>
-      <CardContent>
+      <Box sx={{ display: 'flex', flexDirection: 'column',  alignItems: "center" }}>
+      <CardContent sx={{ width: "40vh",}}>
         <p className='pText'>{t("textAboutMe")}</p>  
       </CardContent>
       <Box>
@@ -22,7 +22,7 @@ function MediaControlCard() {
         </a>
       </Box>  
       </Box>
-      <Box sx={{ display: 'flex', flexDirection: 'column', padding: "30px" }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', padding: "5vh" }}>
         
         <LinearProgressWithLabel
           text={t('diseñoWeb')}

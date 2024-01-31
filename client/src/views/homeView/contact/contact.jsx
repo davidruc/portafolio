@@ -95,7 +95,7 @@ function ContactSection() {
               name="message"
             />
 
-            <Box sx={{ width: "210px" }}>
+            <Box sx={{ width: { xs: "210px",sm: "50vh"} }}>
               <input className="submitButton" type="submit" value="Send email" />
             </Box>
           </Box>

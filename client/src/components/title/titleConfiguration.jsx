@@ -6,7 +6,7 @@ function TitleConfig(props){
         <Box className= "titleConfig" sx={{
             
             display: "flex",
-            marginLeft: { xs: 0, md: 10, lg: 30, xl: 60 },
+            marginLeft: {xs: 0 , md: "40vh"},
             justifyContent: { xs: "center", md: "flex-start" },
         }}>
             <h2> {props.title} </h2>
