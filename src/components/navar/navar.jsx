@@ -18,6 +18,7 @@ import { useInView } from 'react-intersection-observer';
 
 //* Iconos
 import MenuItem from "@mui/material/MenuItem";
+import GTranslateIcon from '@mui/icons-material/GTranslate';
 import MenuIcon from '@mui/icons-material/Menu';
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
@@ -156,7 +157,7 @@ function Navar() {
         
           <Box sx={{ width: "15vh", height: "6vh"}}>
             <FormControl fullWidth  sx={{ height: "100% !important", fontSize: "1.8vh !important",'& .MuiInputLabel-root': { color: 'rgba(255, 255, 255, 0.4)'}, '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(255, 255, 255, 0.4)' }, '& .MuiSelect-icon': { color: 'white' },}}>
-              <InputLabel id="demo-simple-select-label">{t('language')}</InputLabel>
+            <InputLabel id="demo-simple-select-label"><GTranslateIcon/></InputLabel>
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"

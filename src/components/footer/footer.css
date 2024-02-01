@@ -1,0 +1,24 @@
+.iconsRef{
+    color: white;
+    text-decoration: unset;
+    text-align: center;
+}
+
+.upArrow{
+    width: 5vh;
+    
+}
+
+.aRedes{
+    color: white
+}
+.textFooter{
+    text-align: center;
+}
+
+.buttonGoUp{
+    border: unset;
+    background-color: transparent;
+    margin-right: 1vh ;
+}
+

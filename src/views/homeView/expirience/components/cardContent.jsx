@@ -18,27 +18,29 @@ function CardContent() {
                     />
                     <BoxContent
                         img={1}
+                        InitDate={2018}
+                        EndDate={t("present")}
+                        kindOf={t("physics")}
+                        info={t("infoPhysics")}
+                     />
+                    <BoxContent
+                        img={1}
                         InitDate={2022}
                         EndDate={2023}
                         kindOf={"Bootcamp: Campuslands"}
                         info={t("academic")}
                     />
 
-                    <BoxContent
-                        img={1}
-                        InitDate={2022}
-                        EndDate={t("present")}
-                        kindOf={"Udemy - Platzi"}
-                        info={t("certified")}
-                    />
+                    
             </Box>
             <Box className="experienceBox" sx={{display: "flex", flexDirection: "column",backgroundColor:"#F5F5F5", height: "100%", width:{xs: "320px", md: "40vh", lg: "50vh"}, padding: "30px"}}>
+                
                 <BoxContent
                     img={1}
-                    InitDate={2018}
+                    InitDate={2022}
                     EndDate={t("present")}
-                    kindOf={t("physics")}
-                    info={t("infoPhysics")}
+                    kindOf={"Udemy - Platzi"}
+                    info={t("certified")}
                 />
                 <BoxContent
                     img={0}

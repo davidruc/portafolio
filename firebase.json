@@ -9,8 +9,20 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "/index.html"
+        "destination": "/dist/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "**/*.pdf",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/pdf"
+          }
+        ]
       }
     ]
+    
   }
 }

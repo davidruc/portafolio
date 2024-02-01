@@ -4,12 +4,15 @@ import { Box } from "@mui/material";
 import Alert from "@mui/material/Alert";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
+import { useTranslation } from "react-i18next";
 
 import { TitleConfig } from "../../../components/title/titleConfiguration";
 
 import "./contact.css";
 
 function ContactSection() {
+  const {t} = useTranslation();
+ 
   const form = useRef();
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
 
@@ -27,7 +30,7 @@ function ContactSection() {
     });
 
     if (!isValid) {
-      alert("Por favor, completa todos los campos antes de enviar el formulario.");
+      alert(t("alertAllFiles"));
       return;
     }
 
@@ -54,7 +57,7 @@ function ContactSection() {
 
   return (
     <Box>
-      <TitleConfig title={"Get In Touch"} />
+      <TitleConfig title={t("GetInTouch")} />
       <Box
         className="InTouch"
         sx={{
@@ -66,9 +69,9 @@ function ContactSection() {
         }}
       >
         <Box sx={{ marginLeft: { xs: 2 } }}>
-          <h4>Let's talk about your projects!</h4>
+          <h4>{t("letsTalk")}</h4>
           <p>
-            Don't like forms? Send me a <a href="">WhatsApp</a>
+            {t("NoForms")}<a href="https://w.app/jPLhUY" target="_blank" rel="noopener noreferrer">WhatsApp</a>
           </p>
         </Box>
 
@@ -84,19 +87,19 @@ function ContactSection() {
                 gap: 2,
               }}
             >
-              <input type="text" placeholder="Your name" name="user_name" />
-              <input type="text" placeholder="Email address" name="user_email" />
+              <input type="text" placeholder={t("YourName")} name="user_name" />
+              <input type="text" placeholder={t("YourEmail")} name="user_email" />
             </Box>
-            <input className="subject" type="text" placeholder="Subject" />
+            <input className="subject" type="text" placeholder={t("subject")} name="subject"/>
             <textarea
               className="message"
               type="text"
-              placeholder="Message"
+              placeholder={t("message")}
               name="message"
             />
 
             <Box sx={{ width: { xs: "210px",sm: "50vh"} }}>
-              <input className="submitButton" type="submit" value="Send email" />
+              <input className="submitButton" type="submit" value={t("Sendemail")} />
             </Box>
           </Box>
         </form>
@@ -108,11 +111,12 @@ function ContactSection() {
             severity="success"
             action={
               <Button color="inherit" size="small" onClick={handleCloseSuccessAlert}>
-                Close
+                X
               </Button>
             }
           >
-            Tu correo se ha enviado correctamente
+            {t("alertEmailSend")}
+            
           </Alert>
         </Stack>
       )}

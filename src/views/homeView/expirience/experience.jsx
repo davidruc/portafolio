@@ -1,5 +1,6 @@
-import { Box } from "@mui/material"
-import "./experience.css"
+import { Box } from "@mui/material";
+import "./experience.css";
+import { useTranslation } from "react-i18next";
 
 import { TitleConfig } from "../../../components/title/titleConfiguration";
 import { CardContent } from "./components/cardContent";
@@ -25,11 +26,11 @@ const tecnologies = [
 
 function ExperienceSection(){
     
-    
+    const {t} = useTranslation();
     return (
         <Box className="experienceSection">
             <TitleConfig 
-                title={"Experience"}
+                title={t("Experience")}
             />
             
             <CardContent/>

@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { MediaControlCard } from "../../../components/card/card";
-import me from "../../../assets/skyProvisional.jpeg";
+import me from "../../../assets/profilePicture.png";
 import {ButtonStats} from "../buttons_stats/buttons_stats"
 import "./about.css";
 import { TitleConfig } from "../../../components/title/titleConfiguration";

@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 
 function MediaControlCard() {
   const { t } = useTranslation();
-  const pathCv = "../../../public/cv.pdf";
+  const pathCv = "cv.pdf";
   return (
     <Card className='cardBox' sx={{ display: 'flex', flexDirection: {xs: "column", md: "row"}, alignItems: "center"}}>
       <Box sx={{ display: 'flex', flexDirection: 'column',  alignItems: "center" }}>

@@ -8,6 +8,16 @@ export default function InitialPart() {
 
   const { t } = useTranslation();
 
+
+  const NAVBAR_HEIGHT = 130; // Ajusta esto según la altura de tu navbar fijo
+
+  const handleLinkClick = (href) => {
+    const targetElement = document.getElementById(href.substring(1));
+    if (targetElement) {
+      const offset = targetElement.offsetTop - NAVBAR_HEIGHT;
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+    }
+  };
   return (
     <Box
       sx={{
@@ -30,9 +40,8 @@ export default function InitialPart() {
     
         <ListOfIcons />
       </Box>
-      <a href="#contact" className="smooth-link">
-      <ActionButton text={t('hireMe')} />
-      </a>
+      <ActionButton  onClick={()=> handleLinkClick('#contact')} text={t('hireMe')} />
+     
     </Box>
   );
 }
